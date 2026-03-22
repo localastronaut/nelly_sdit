@@ -11,6 +11,7 @@ my-work/ directory, rebuilt to HTML, and pushed to GitHub automatically.
 
 import http.server
 import json
+import os
 import re
 import subprocess
 import sys
@@ -19,7 +20,7 @@ import urllib.parse
 import webbrowser
 from pathlib import Path
 
-PORT = 3001
+PORT = int(os.environ.get("PORT", "3001"))
 ROOT = Path(__file__).parent.resolve()
 MY_WORK = ROOT / "my-work"
 
